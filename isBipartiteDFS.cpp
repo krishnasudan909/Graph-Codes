@@ -5,7 +5,7 @@ class Solution{
     bool checkBipartiteDFS(int node, vector<int> adj[], vector<int>& color){
         for(auto& i: adj[node]){
                 if(color[i]==-1){
-                    color[i] = (color[t]==0?1:0);
+                    color[i] = (color[node]==0?1:0);
                     if(!checkBipartiteDFS(i,adj,color)) return false;
                 }
                 else if(color[i]==color[node]) return false;
