@@ -30,7 +30,7 @@ void shortestPath(int src, int N, vector<pair<int,int>> adj[])
 		int node = st.top(); 
 		st.pop(); 
  
-		if (dist[node] != INT_MAX) {
+		if (dist[node] != INT_MAX) { // to check whether we have reached src node or not, because it might happen src is not always top of stack
 		    for(auto it : adj[node]) {
 		        if(dist[node] + it.second < dist[it.first]) {
 		            dist[it.first] = dist[node] + it.second; 
